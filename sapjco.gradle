@@ -1,4 +1,4 @@
 ext {
     sapjcoVersion = '3.0.14'
-    artifactVersion = sapjcoVersion + 'SNAPSHOT'
+    artifactVersion = sapjcoVersion + '-SNAPSHOT'
 }
