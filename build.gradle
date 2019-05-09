@@ -59,7 +59,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId = 'cn.yanzx-dev.gitlab'
-            artifactId = 'jco-spring'
+            artifactId = 'com.sap.conn.jco.sapjco'
             version = artifactVersion
             from components.java
             artifact sourcesJar
