@@ -5,4 +5,5 @@
 ![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/snapshots/https/oss.sonatype.org/cn.yanzx-dev.gitlab/com.sap.conn.jco.sapjco.svg)
 
 
-## Sync SAP JCo Dependency From http://maven.mit.edu/nexus/content/repositories/public/com/sap/jco/sapjco/
+## Sync from sapjco repository
+http://maven.mit.edu/nexus/content/repositories/public/com/sap/jco/sapjco/
