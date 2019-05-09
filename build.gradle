@@ -6,7 +6,7 @@ plugins {
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
 
-apply from: 'sapjco.gradle'
+apply from: 'artifact.gradle'
 
 group 'cn.yanzx-dev.gitlab'
 version artifactVersion
