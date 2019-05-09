@@ -6,7 +6,7 @@ plugins {
 apply from: 'sapjco.gradle'
 
 group 'cn.yanzx-dev.gitlab'
-version sapjcoVersion
+version artifactVersion
 
 sourceCompatibility = 1.8
 
