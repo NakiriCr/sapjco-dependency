@@ -1,0 +1,37 @@
+import java.util.stream.Collectors
+
+plugins {
+    id 'java'
+}
+apply from: 'sapjco.gradle'
+
+group 'cn.yanzx-dev.gitlab'
+version sapjcoVersion
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url "http://maven.mit.edu/nexus/content/repositories/public/" }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << "-parameters"
+}
+
+dependencies {
+    compile group: 'com.sap.jco', name: 'sapjco', version: sapjcoVersion
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+jar {
+    from { 
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+                .stream()
+                .map { tree -> 
+                    tree.matching { exclude 'META-INF/MANIFEST.MF', 'META-INF/SAP_SE_G.RSA', 'META-INF/SAP_SE_G.SF' } }
+                .collect(Collectors.toList())
+    }
+}
