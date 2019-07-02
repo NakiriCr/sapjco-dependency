@@ -28,10 +28,10 @@ dependencies {
 }
 
 jar {
-    from { 
-        configurations.compileOnly.collect { it.isDirectory() ? it : zipTree(it) }
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
                 .stream()
-                .map { tree -> 
+                .map { tree ->
                     tree.matching { exclude 'META-INF/MANIFEST.MF', 'META-INF/SAP_SE_G.RSA', 'META-INF/SAP_SE_G.SF' } }
                 .collect(Collectors.toList())
     }
