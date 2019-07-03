@@ -24,12 +24,12 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-    compile group: 'com.sap.jco', name: 'sapjco', version: sapjcoVersion
+    compileOnly group: 'com.sap.jco', name: 'sapjco', version: sapjcoVersion
 }
 
 jar {
     from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.compileOnly.collect { it.isDirectory() ? it : zipTree(it) }
                 .stream()
                 .map { tree ->
                     tree.matching { exclude 'META-INF/MANIFEST.MF', 'META-INF/SAP_SE_G.RSA', 'META-INF/SAP_SE_G.SF' } }
