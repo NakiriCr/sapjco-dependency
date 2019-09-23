@@ -3,6 +3,7 @@ import java.util.stream.Collectors
 plugins {
     id 'java'
 }
+
 apply from: 'artifact.gradle'
 
 group 'cn.yanzx-dev.gitlab'
@@ -30,8 +31,5 @@ jar {
                 .map { tree -> 
                     tree.matching { exclude 'META-INF/MANIFEST.MF', 'META-INF/SAP_SE_G.RSA', 'META-INF/SAP_SE_G.SF' } }
                 .collect(Collectors.toList())
-    }
-    manifest {
-        attributes 'Main-Class': 'com.sap.conn.jco.rt.About'
     }
 }
