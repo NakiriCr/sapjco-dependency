@@ -15,7 +15,6 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    maven { url "http://maven.mit.edu/nexus/content/repositories/public/" }
 }
 
 tasks.withType(JavaCompile) {
@@ -24,7 +23,7 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-    compileOnly group: 'com.sap.jco', name: 'sapjco', version: sapjcoVersion
+    compileOnly files("libs/sapjco3.jar")
 }
 
 jar {
@@ -34,6 +33,9 @@ jar {
                 .map { tree ->
                     tree.matching { exclude 'META-INF/MANIFEST.MF', 'META-INF/SAP_SE_G.RSA', 'META-INF/SAP_SE_G.SF' } }
                 .collect(Collectors.toList())
+    }
+    manifest {
+        attributes 'Main-Class': 'com.sap.conn.jco.rt.About'
     }
 }
 
