@@ -1,20 +1,5 @@
-import java.util.stream.Collectors
-
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
-
-jar {
-    from {
-        configurations.compileOnly.collect { it.isDirectory() ? it : zipTree(it) }
-                .stream()
-                .map { tree ->
-                    tree.matching { exclude 'META-INF/MANIFEST.MF', 'META-INF/SAP_SE_G.RSA', 'META-INF/SAP_SE_G.SF' } }
-                .collect(Collectors.toList())
-    }
-    manifest {
-        attributes 'Main-Class': 'com.sap.conn.jco.rt.About'
-    }
-}
 
 task sourcesJar(type: Jar) {
     from sourceSets.main.allJava
@@ -87,4 +72,10 @@ publishing {
 
 signing {
     sign publishing.publications.mavenJava
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.sap.conn.jco.rt.About'
+    }
 }
