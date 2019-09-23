@@ -1,12 +1,9 @@
-import java.util.stream.Collectors
-
 plugins {
     id 'java'
 }
-apply plugin: 'maven-publish'
-apply plugin: 'signing'
 
 apply from: 'artifact.gradle'
+apply from: 'artifact_publish.gradle'
 
 group 'cn.yanzx-dev.gitlab'
 version artifactVersion
@@ -24,90 +21,4 @@ tasks.withType(JavaCompile) {
 
 dependencies {
     compileOnly files("libs/sapjco3.jar")
-}
-
-jar {
-    from {
-        configurations.compileOnly.collect { it.isDirectory() ? it : zipTree(it) }
-                .stream()
-                .map { tree ->
-                    tree.matching { exclude 'META-INF/MANIFEST.MF', 'META-INF/SAP_SE_G.RSA', 'META-INF/SAP_SE_G.SF' } }
-                .collect(Collectors.toList())
-    }
-    manifest {
-        attributes 'Main-Class': 'com.sap.conn.jco.rt.About'
-    }
-}
-
-task sourcesJar(type: Jar) {
-    from sourceSets.main.allJava
-    classifier = 'sources'
-}
-
-task javadocJar(type: Jar) {
-    from javadoc
-    classifier = 'javadoc'
-}
-
-tasks.withType(Javadoc) {
-    options.addStringOption('Xdoclint:none', '-quiet')
-    options.addStringOption('encoding', 'UTF-8')
-    options.addStringOption('charSet', 'UTF-8')
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId = 'com.github.virtualcry'
-            artifactId = 'com.sap.conn.jco.sapjco'
-            version = artifactVersion
-            from components.java
-            artifact sourcesJar
-            artifact javadocJar
-            pom {
-                // artifact name
-                name = 'Sapjco Runtime Dependency'
-                // artifact description
-                description = 'Sapjco Runtime Dependency'
-                // artifact homepage
-                url = 'https://github.com/virtualcry/sapjco-dependency'
-                // licenses
-                licenses {
-                    license {
-                        name = 'The Apache License, Version 2.0'
-                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                // developers info
-                developers {
-                    developer {
-                        name = 'VirtualCry'
-                        email = '172519267@qq.com'
-                    }
-                }
-                // scm
-                scm {
-                    url = 'https://github.com/virtualcry/sapjco-dependency'
-                    connection = 'scm:git:https://github.com/virtualcry/sapjco-dependency.git'
-                    developerConnection = 'scm:git:https://github.com/virtualcry/sapjco-dependency.git'
-                }
-            }
-        }
-    }
-    // repositories to publish
-    repositories {
-        maven {
-            def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
-            def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
-            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
-            credentials {
-                username sonatypeUsername
-                password sonatypePassword
-            }
-        }
-    }
-}
-
-signing {
-    sign publishing.publications.mavenJava
 }
