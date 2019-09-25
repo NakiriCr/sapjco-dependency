@@ -23,6 +23,8 @@ SAP JCo支持在以下两个方向上与sap服务器进行通信：`入站调用
 * 易于安装和部署.
 
 ## SAP JCo体系结构
+![avatar](https://gitlab.yanzx-dev.cn/sapjco/sapjco-dependency/raw/master/images/sapjco-architecture.png)
+<br>
 SAP 以两种不同的方式提供SAP Java连接器：作为可以独立于SAP系统安装的独立软件组件，或者作为SAP技术组件的集成组件。
 
 ## 集成标准方案
