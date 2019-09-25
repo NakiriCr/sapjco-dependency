@@ -23,7 +23,7 @@ The SAP JCo is the best choice for building SAP-enabled Java applications becaus
 * Easy to install and deploy.
 
 ## SAP JCo Architecture
-![avatar](https://gitlab.yanzx-dev.cn/sapjco/sapjco-dependency/blob/master/images/sapjco-architecture.png)
+![avatar](https://gitlab.yanzx-dev.cn/sapjco/sapjco-dependency/raw/master/images/sapjco-architecture.png)
 <br>
 SAP provides SAP Java Connector in two different ways: 
 as a standalone software component that can be installed independently of the SAP system or  As an integrated component of an SAP technology component.
