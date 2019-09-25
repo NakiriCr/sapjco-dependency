@@ -6,26 +6,25 @@
 ![Maven Central](https://img.shields.io/maven-central/v/com.github.virtualcry/com.sap.conn.jco.sapjco.svg)
 ![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/snapshots/https/oss.sonatype.org/com.github.virtualcry/com.sap.conn.jco.sapjco.svg)
 
-## Introduction
-The SAP Java Connector (SAP JCo) is a toolkit that allows a Java application to communicate with any SAP System. 
-It combines an easy to use API with unprecedented flexibility and performance. 
-The SAP JCo supports communication to the sap server in  both directions inbound calls: Java to SAP System as well as outbound calls: SAP System to Java.
+## 简介
+SAP Java连接器（SAP JCo）是允许Java应用程序与任何SAP系统通信的工具包。
+它结合了易于使用的API和前所未有的灵活性和性能。
+SAP JCo支持在以下两个方向上与sap服务器进行通信：`入站调用`：Java 到 SAP 以及`出站调用`：SAP 到 Java。
 
 
-The SAP JCo is the best choice for building SAP-enabled Java applications because of the following features:
-* High performance JNI-based RFC middleware.
-* Supports R/3 3.1I and higher (and other SAP Components that have BAPIs or RFMs).
-* Supports inbound (Java client calls BAPI or RFM) and outbound (ABAP calls Java server) calls.
-* Supports synchronous, transactional (important for IDocs), and queued RFC.
-* Supports client pooling (good for web servers).
-* Multi-platform
-* Complete and correct code-page handling (incl. multi-byte languages).
-* Easy to install and deploy.
+由于以下功能，SAP JCo是构建支持SAP的Java应用程序的最佳选择：
+* 高性能基于JNI的RFC中间件
+* 支持R/3 3.1I及更高版本（以及其他具有BAPI或RFM的SAP组件）
+* 支持入站（Java客户端调用BAPI或RFM）和出站（ABAP调用Java服务器）调用
+* 支持同步，事务（对于IDocs很重要）和RFC队列.
+* 支持客户端连接池（适用于Web服务器）.
+* 多平台
+* 完整和正确的字节内码处理（包括多字节语言）.
+* 易于安装和部署.
 
-## SAP JCo Architecture
-SAP provides SAP Java Connector in two different ways: 
-as a standalone software component that can be installed independently of the SAP system or  As an integrated component of an SAP technology component.
+## SAP JCo体系结构
+SAP 以两种不同的方式提供SAP Java连接器：作为可以独立于SAP系统安装的独立软件组件，或者作为SAP技术组件的集成组件。
 
-## Integrated standard scenario
-* J2EE/ABAP Coupling in the SAP Web Application Server
-* SAP JCo Scenario: SAP BC
+## 集成标准方案
+* SAP Web应用服务器中的J2EE / ABAP耦合
+* SAP JCo方案：SAP BC
