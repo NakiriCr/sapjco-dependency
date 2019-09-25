@@ -9,11 +9,11 @@
 ## Introduction
 The SAP Java Connector (SAP JCo) is a toolkit that allows a Java application to communicate with any SAP System. 
 It combines an easy to use API with unprecedented flexibility and performance. 
-The SAP JCo supports communication to the sap server in  both directions inbound calls: Java to SAP System as well as outbound calls: SAP System to Java.
+The SAP JCo supports communication to the sap server in both directions `inbound calls`: Java to SAP System as well as `outbound calls`: SAP System to Java.
 
 
 The SAP JCo is the best choice for building SAP-enabled Java applications because of the following features:
-* High performance JNI-based RFC middleware.
+* High performance JNI-based `RFC middleware`.
 * Supports R/3 3.1I and higher (and other SAP Components that have BAPIs or RFMs).
 * Supports inbound (Java client calls BAPI or RFM) and outbound (ABAP calls Java server) calls.
 * Supports synchronous, transactional (important for IDocs), and queued RFC.
