@@ -1,4 +1,4 @@
-# Sapjco Runtime Dependency
+# SAPJCo Runtime Dependency
 
 **README: [English](https://gitlab.yanzx-dev.cn/sapjco/sapjco-dependency/blob/master/README.md) | [中文](https://gitlab.yanzx-dev.cn/sapjco/sapjco-dependency/blob/master/README-zh.md)**
 
