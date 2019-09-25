@@ -16,7 +16,7 @@ The SAP JCo is the best choice for building SAP-enabled Java applications becaus
 * High performance JNI-based `RFC middleware`.
 * Supports R/3 3.1I and higher (and other SAP Components that have BAPIs or RFMs).
 * Supports inbound (Java client calls BAPI or RFM) and outbound (ABAP calls Java server) calls.
-* Supports synchronous, transactional (important for IDocs), and queued RFC.
+* Supports `synchronous`, `transactional` (important for IDocs), and `queued RFC`.
 * Supports client pooling (good for web servers).
 * Multi-platform
 * Complete and correct code-page handling (incl. multi-byte languages).
